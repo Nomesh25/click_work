@@ -1,11 +1,11 @@
-ul.topnav {
+/* ul.topnav {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #333;
-  /* Ensure the navigation bar stays on top of other elements */
 }
+
 ul.topnav li {
   float: left;
 }
@@ -36,41 +36,53 @@ ul.topnav li.abt {
     float: none;
   }
 }
+
 body {
   background-image: url("tree.jpeg");
-  background-size: 100%;
-}
-.allabout {
-  color: orange;
-  /* padding: 25% 25%; */
-  border: 1px solid white;
-
-  font-size: 20px;
-  padding: 10px;
-  width: auto;
-}
-#about:not(p) {
-  text-align: center;
-  margin: auto;
-  width: 50%;
-  background-image: url("sun.jpg");
   background-size: cover;
 }
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
 .left {
-  flex: 1;
-  padding-right: 20px;
+  color: white;
+  background-color: rgba(128, 128, 128, 0.8);
+  padding: 10px;
+}
+
+.left h1,
+.left h2 {
+  color: white;
+}
+
+.left p {
+  color: orange;
+  font-weight: bold;
 }
 
 .right {
-  flex: 1;
   padding-left: 20px;
 }
-.footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
+
+.form-group {
   padding: 10px;
 }
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+}
+
 .submit-btn {
   padding: 10px 20px;
   background-color: orange;
@@ -79,42 +91,120 @@ body {
   border-radius: 4px;
   cursor: pointer;
 }
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+} */
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav li {
+  float: left;
+}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {
+  background-color: #111;
+}
+
+ul.topnav li a.active {
+  background-color: orange;
+}
+
+ul.topnav li.abt {
+  float: right;
+}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.abt,
+  ul.topnav li {
+    float: none;
+  }
+
+  ul.topnav li {
+    width: 100%;
+  }
+}
+
+body {
+  background-image: url("tree.jpeg");
+  background-size: cover;
+}
+
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
-textarea {
-  width: 100%;
-  padding: 10px;
-  /* border: 1px solid #ccc; */
-  border-radius: 4px;
+
+@media screen and (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
 }
-.form-group {
-  width: 100%;
-  padding: 10px;
-  /* border: 1px solid #ccc; */
-  border-radius: 4px;
-}
-label {
-  display: block;
-  font-weight: bold;
-}
-textarea {
-  resize: vertical;
-}
-.left h1 {
+
+.left {
   color: white;
+  background-color: rgba(128, 128, 128, 0.8);
+  padding: 10px;
 }
+
+.left h1,
 .left h2 {
   color: white;
 }
+
 .left p {
   color: orange;
   font-weight: bold;
 }
-.left {
-  background: rgba(128, 128, 128, 0.8);
+
+.right {
+  padding-left: 20px;
+}
+
+.form-group {
   padding: 10px;
-  width: 50%;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.submit-btn {
+  padding: 10px 20px;
+  background-color: orange;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
 }
